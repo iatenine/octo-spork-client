@@ -4,7 +4,7 @@ import Home from './pages/home';
 import Results from './pages/results';
 import Details from './pages/details';
 import About from './pages/about'
-import Navigation from './component/Navbar';
+import Navbar from './component/Navbar';
 
 
 import './App.css';
@@ -18,7 +18,7 @@ import {
 function App() {
   return (
     <>
-    <Navigation />
+    <Navbar />
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
