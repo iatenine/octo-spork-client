@@ -4,7 +4,7 @@ import Home from './pages/home';
 import Results from './pages/results';
 import Details from './pages/details';
 import About from './pages/about'
-import Navbar from './component/Navbar';
+import Navbar from './component/NavComponent';
 
 
 import './App.css';
