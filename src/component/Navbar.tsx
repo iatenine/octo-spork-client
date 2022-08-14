@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function OffcanvasExample() {
+function Navbar() {
   return (
     <>
         <Navbar key="false" expand="false" className="mb-3">
@@ -28,4 +28,4 @@ function OffcanvasExample() {
   );
 }
 
-export default OffcanvasExample;
+export default Navbar;
