@@ -8,18 +8,19 @@ import Navbar from './component/NavComponent';
 
 
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
     <>
     <Navbar />
-    <Router>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/results' element={<Results/>} />
@@ -27,7 +28,6 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='*' element={<Home />} />
       </Routes>
-    </Router>
   </>
   );
 }
