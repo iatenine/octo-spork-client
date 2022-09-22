@@ -16,14 +16,14 @@ code {
   margin: 5%;
 }
 
-.dot {
-  height: 700px;
-  width: 700px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
+.title {
+  font-size: 3rem;
+  padding-top: 1%;
+  padding-left: 2%;
+  text-decoration: none;
+  color: black;
 
-footer {
-  
+}
+.title:hover {
+  color: rgb(72, 72, 95);
 }

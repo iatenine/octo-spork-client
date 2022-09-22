@@ -4,12 +4,13 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
+
 function NavComponent() {
   return (
     <>
-      <Navbar key="false" expand="false" className="mb-3">
+      <Navbar key="false" expand="false" className="xxl mb-3" >
         <Container fluid>
-          <Navbar.Brand href="#">Site Name Here</Navbar.Brand>
+          <Navbar.Brand bsPrefix="title" href="#">MyRepInfo</Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-false`}
