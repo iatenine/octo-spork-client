@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# MyRepInfo
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
+[Description](#description)  
+[Installation](#installation)  
+[Usage](#usage)  
+[Contributing](#contributing)  
+[Tests](#tests)  
+[Questions](#questions)  
+[License](#license)  
 
-## Available Scripts
+# Description
+Client-side repo of MyRepInfo project; quickly look up and access info regarding your congressional representatives
 
-In the project directory, you can run:
 
-### `npm start`
+# Installation
+ * Clone the repository
+ * Run `npm i` to install dependencies
+ * Launch the React app using `npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Usage
+Users do not need to install anything to utilize MyRepInfo. The most up-to-date available version of the site can be viewed at https://iatenine.github.io/octo-spork-client/
 
-### `npm test`
+# Contributing
+There are multiple ways to contribute to MyRepInfo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ * Open an issue to report a problem or request new feature
+ * Claim any open issue and create a PR addressing it
+ * Spread the word
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Tests
+Test coverage is powered by Jest and RTL, albeit coverage is very limited at the time of this writing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Questions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Maintainer](https://github.com/iatenine)  
+For further questions, direct emails [here](mailto:FullJackDevelopment@gmail.com)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# License
+  This project is covered under [The MIT License](https://opensource.org/licenses/MIT)
