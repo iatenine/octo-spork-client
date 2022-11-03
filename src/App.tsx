@@ -8,18 +8,32 @@ import Navbar from "./component/NavComponent";
 
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useFetchMembers } from "./hooks/useFetchMembers";
 
 function App() {
+  const { members, stateCode, setStateCode, district, setDistrict } =
+    useFetchMembers();
+
   return (
     <>
       <Router basename={`/${process.env.PUBLIC_URL}`}>
         <Navbar />
         <Routes>
-          <Route path="" element={<Home />} />
           <Route path="/results" element={<Results />} />
           <Route path="/details" element={<Details />} />
           <Route path="/about" element={<About />} />
-          <Route path="*" element={<Home />} />
+          <Route
+            path="*"
+            element={
+              <Home
+                members={members}
+                stateCode={stateCode}
+                setStateCode={setStateCode}
+                district={district}
+                setDistrict={setDistrict}
+              />
+            }
+          />
         </Routes>
       </Router>
     </>
