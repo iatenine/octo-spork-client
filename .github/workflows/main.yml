@@ -1,19 +1,22 @@
-name: PR workflow
+name: PR Workflow
 on:
-  pull_request:
-    branches:
-      - main
+    pull_request:
+        branches:
+            - dev
+            - main
 jobs:
-  test:
-    runs-on: ubuntu-latest
-      steps:
-          - name: Checkout code
-            uses: actions/checkout@v1
-          - name: Use Node.js 16.x
-            uses: actions/setup-node@v1
-            with:
-                node-version: 16.x
-          - name: 🧰 install deps
-            run: npm install
-          - name: Run lint
-            run: npm run eslint
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v1
+            - name: Use Node.js 16.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+            - name: Install deps
+              run: npm install
+            - name: Lint
+              run: npm run eslint
+            - name: Format
+              run: npm run format
