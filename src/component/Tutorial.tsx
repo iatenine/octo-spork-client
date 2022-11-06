@@ -21,9 +21,16 @@ function Tutorial() {
         </Modal.Header>
         <Modal.Body>
           <ListGroup as="ol" numbered>
-            <ListGroup.Item as="li">Enter your zipcode into the search bar and press enter</ListGroup.Item>
-            <ListGroup.Item as="li">A list of your representives will be generated</ListGroup.Item>
-            <ListGroup.Item as="li">View your representives voting records and a history of their campaign donations</ListGroup.Item>
+            <ListGroup.Item as="li">
+              Enter your zipcode into the search bar and press enter
+            </ListGroup.Item>
+            <ListGroup.Item as="li">
+              A list of your representives will be generated
+            </ListGroup.Item>
+            <ListGroup.Item as="li">
+              View your representives voting records and a history of their
+              campaign donations
+            </ListGroup.Item>
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>

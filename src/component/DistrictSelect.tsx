@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { codeProps } from "../data/types";
+import { extractDistricts } from "../utils/utils";
 
-function DistrictSelect({
-  members,
-  setDistrict,
-  stateCode,
-}: codeProps) {
+function DistrictSelect({ members, setDistrict, stateCode }: codeProps) {
   const placeholder: string = "Select your District";
-  const [districtList, setDistrictList] = useState([placeholder]);
+  const districtList = extractDistricts(members);
 
   const onChangeHandler = (e: { target: { value: any } }) => {
     if (e.target.value !== placeholder) setDistrict(e.target.value);
   };
-
-  useEffect(() => {
-    const tempList: number[] = [];
-    members.forEach((member) => {
-      if (member?.district && !tempList.includes(member?.district))
-        tempList.push(member.district);
-    });
-    tempList.sort((a, b) => a - b);
-    const newList: string[] = tempList.map((elem) => elem.toString());
-    if (newList.length === 1) setDistrict("At-Large");
-    setDistrictList([placeholder, ...newList]);
-  }, [members]);
 
   return (
     <>
@@ -33,13 +18,15 @@ function DistrictSelect({
           defaultValue={stateCode}
           className="col-11 rounded"
         >
-          {districtList.map((elem, index) => {
-            return (
-              <option key={index} value={elem}>
-                {elem}
-              </option>
-            );
-          })}
+          {Array.isArray(districtList)
+            ? districtList?.map((elem, index) => {
+                return (
+                  <option key={index} value={elem}>
+                    {elem}
+                  </option>
+                );
+              })
+            : null}
         </select>
       )}
     </>
