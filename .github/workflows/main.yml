@@ -6,14 +6,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-      - name: Install Node
-        uses: actions/setup-node@v1
-      - name: install deps
-        run: npm install
-      - name: ESLint
-        run: npm eslint
-      - name: Format
-        run: npm format
+      steps:
+          - name: Checkout code
+            uses: actions/checkout@v1
+          - name: Use Node.js 16.x
+            uses: actions/setup-node@v1
+            with:
+                node-version: 16.x
+          - name: 🧰 install deps
+            run: npm install
+          - name: Run lint
+            run: npm run eslint
