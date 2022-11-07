@@ -15,6 +15,7 @@
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-icons": "^1.9.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint": "eslint src",
+    "format": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +51,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "eslint": "^8.27.0",
+    "gh-pages": "^4.0.0",
+    "prettier": "2.7.1"
   }
 }

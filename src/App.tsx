@@ -1,9 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./pages/home";
-import Results from "./pages/results";
-import Details from "./pages/details";
-import About from "./pages/about";
+import Home from "./pages/Home";
+import Results from "./pages/Results";
+import About from "./pages/About";
 import Navbar from "./component/NavComponent";
 
 import "./App.css";
@@ -20,7 +19,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/results" element={<Results />} />
-          <Route path="/details" element={<Details />} />
           <Route path="/about" element={<About />} />
           <Route
             path="*"

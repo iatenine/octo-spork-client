@@ -1,7 +1,7 @@
 export type codeProps = {
   stateCode: string;
   setStateCode: Function;
-  district: Number | string;
+  district: number | "At-Large" | "";
   setDistrict: Function;
   members: Array<any>;
 };
