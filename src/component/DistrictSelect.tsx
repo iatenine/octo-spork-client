@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { codeProps } from "../data/types";
 import { extractDistricts } from "../utils/utils";
 
@@ -9,12 +9,10 @@ function DistrictSelect({ members, setDistrict, stateCode }: codeProps) {
 
   const onChangeHandler = (e: { target: { value: any } }) => {
     const { value } = e.target;
-    if(value === uncertain) {
+    if (value === uncertain) {
       setDistrict("999999");
-    }
-    else if (e.target.value !== placeholder) setDistrict(e.target.value);
+    } else if (e.target.value !== placeholder) setDistrict(e.target.value);
   };
-
 
   return (
     <>
