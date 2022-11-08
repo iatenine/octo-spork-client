@@ -1,6 +1,4 @@
 export const extractDistricts = (members: any[]): number[] | "At-Large" => {
-  console.log({ members });
-
   const tempList: number[] = [];
   members.forEach((member) => {
     if (member?.district && !tempList.includes(member?.district))

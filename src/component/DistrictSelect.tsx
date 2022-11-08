@@ -1,14 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { codeProps } from "../data/types";
 import { extractDistricts } from "../utils/utils";
 
 function DistrictSelect({ members, setDistrict, stateCode }: codeProps) {
   const placeholder: string = "Select your District";
+  const uncertain: string = "Senators Only";
   const districtList = extractDistricts(members);
 
   const onChangeHandler = (e: { target: { value: any } }) => {
-    if (e.target.value !== placeholder) setDistrict(e.target.value);
+    const { value } = e.target;
+    if(value === uncertain) {
+      setDistrict("999999");
+    }
+    else if (e.target.value !== placeholder) setDistrict(e.target.value);
   };
+
 
   return (
     <>
@@ -19,7 +25,7 @@ function DistrictSelect({ members, setDistrict, stateCode }: codeProps) {
           className="col-11 rounded"
         >
           {Array.isArray(districtList)
-            ? districtList?.map((elem, index) => {
+            ? [placeholder, ...districtList, uncertain]?.map((elem, index) => {
                 return (
                   <option key={index} value={elem}>
                     {elem}

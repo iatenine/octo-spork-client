@@ -4,7 +4,9 @@ function About() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>About TEST</p>
+        <p>
+          MyRepInfo is designed to simplify the process of finding information regarding your congressional representatives
+        </p>
       </header>
     </div>
   );

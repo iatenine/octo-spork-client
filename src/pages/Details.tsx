@@ -9,8 +9,6 @@ function Details(props: {
   resetDistrict: Function;
   district: number | "At-Large";
 }) {
-  console.log({ members: props.members, district: props.district });
-
   return (
     <div>
       <Row xs={2} md={4} lg={6}>
