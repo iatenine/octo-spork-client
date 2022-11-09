@@ -14,7 +14,8 @@ function Home(props: codeProps) {
   };
   return (
     <div className="center-wrapper">
-      {!props.district || props.members.length > 3 ? (
+      {(!props.district || props.members.length > 3) &&
+      props.district !== "At-Large" ? (
         <Stack gap={0} className="col-md-5 mx-auto">
           <img src={WhiteHouse} alt="black icon of the white house" />
           <Stack direction="horizontal" className="col-12" gap={3}>

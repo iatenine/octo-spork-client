@@ -10,13 +10,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useFetchMembers } from "./hooks/useFetchMembers";
 
 function App() {
-  const { members, stateCode, setStateCode, district, setDistrict } =
+  const props =
     useFetchMembers();
 
   return (
     <>
       <Router basename={`/${process.env.PUBLIC_URL}`}>
-        <Navbar />
+        <Navbar 
+          {...props}
+        />
         <Routes>
           <Route path="/results" element={<Results />} />
           <Route path="/about" element={<About />} />
@@ -24,11 +26,7 @@ function App() {
             path="*"
             element={
               <Home
-                members={members}
-                stateCode={stateCode}
-                setStateCode={setStateCode}
-                district={district}
-                setDistrict={setDistrict}
+                {...props}
               />
             }
           />
