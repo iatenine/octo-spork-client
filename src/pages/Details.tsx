@@ -65,7 +65,7 @@ function Details(props: {
 
   return (
     <div>
-      <Row xs={12} sm={3}>
+      <Row xs={12} sm={4}>
         {props.members.map((member) => {
           return (
             <Container fluid className="mb-2" key={member._id}>
