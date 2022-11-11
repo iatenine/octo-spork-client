@@ -12,3 +12,16 @@ export const extractDistricts = (members: any[]): number[] | "At-Large" => {
 
 export const isAtLarge = (members: any[]): boolean =>
   members.some((elem) => elem?.district === "At-Large");
+
+export const getMemberVotes = async (
+  url: string,
+  memberId: string
+): Promise<any> => {
+  try {
+    const endpoint: string = `/representatives/${memberId}`;
+    const res = await await (await fetch(`${url + endpoint}`)).json();
+    return res;
+  } catch (error) {
+    console.error({ error });
+  }
+};
