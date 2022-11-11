@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/octo-spork-client/static/css/main.ecde6cfc.css",
-    "main.js": "/octo-spork-client/static/js/main.50f1ca1b.js",
+    "main.js": "/octo-spork-client/static/js/main.45ab8f8a.js",
     "static/js/787.79e345b2.chunk.js": "/octo-spork-client/static/js/787.79e345b2.chunk.js",
     "static/media/whiteHouse.png": "/octo-spork-client/static/media/whiteHouse.cfd260fab928b314cc8e.png",
     "index.html": "/octo-spork-client/index.html",
     "main.ecde6cfc.css.map": "/octo-spork-client/static/css/main.ecde6cfc.css.map",
-    "main.50f1ca1b.js.map": "/octo-spork-client/static/js/main.50f1ca1b.js.map",
+    "main.45ab8f8a.js.map": "/octo-spork-client/static/js/main.45ab8f8a.js.map",
     "787.79e345b2.chunk.js.map": "/octo-spork-client/static/js/787.79e345b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecde6cfc.css",
-    "static/js/main.50f1ca1b.js"
+    "static/js/main.45ab8f8a.js"
   ]
 }
