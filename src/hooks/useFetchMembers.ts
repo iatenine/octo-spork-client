@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { isAtLarge } from "../utils/utils";
-
-const url = process.env.SERVER_URL || "https://octo-spork.herokuapp.com";
+import { url } from "../data/constants";
 
 export const useFetchMembers = () => {
   const [members, setmembers] = useState<any[]>([]);

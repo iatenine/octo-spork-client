@@ -11,6 +11,7 @@ import {
   Geo,
 } from "react-bootstrap-icons";
 import { getMemberVotes } from "../utils/utils";
+import { url } from "../data/constants";
 
 function Details(props: {
   members: any[];
@@ -21,7 +22,7 @@ function Details(props: {
 
   const fetchRecords = async (id: string) => {
     if (records.some(({ member_id }) => id === member_id)) return;
-    const res = await getMemberVotes("https://octo-spork.herokuapp.com", id);
+    const res = await getMemberVotes(url, id);
     setRecords([...records, ...res.votingRecords.records]);
   };
 
