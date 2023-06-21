@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 cp --recursive ./build s3://dev.myrepinfo.org
+      - aws cloudfront create-invalidation --distribution-id E1EWO9GA53VYMU --path /\*

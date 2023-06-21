@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Results from "./pages/Results";
@@ -10,26 +9,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useFetchMembers } from "./hooks/useFetchMembers";
 
 function App() {
-  const props =
-    useFetchMembers();
+  const props = useFetchMembers();
 
   return (
     <>
       <Router basename={`/${process.env.PUBLIC_URL}`}>
-        <Navbar 
-          {...props}
-        />
+        <Navbar {...props} />
         <Routes>
           <Route path="/results" element={<Results />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="*"
-            element={
-              <Home
-                {...props}
-              />
-            }
-          />
+          <Route path="*" element={<Home {...props} />} />
         </Routes>
       </Router>
     </>
