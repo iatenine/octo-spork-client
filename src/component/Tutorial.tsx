@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -11,11 +11,15 @@ function Tutorial() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        data-testid={"tutorial-toggle-btn"}
+        variant="primary"
+        onClick={handleShow}
+      >
         ?
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal data-testid={"tutorial-modal"} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>How to Use: MyRepInfo</Modal.Title>
         </Modal.Header>
