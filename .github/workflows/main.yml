@@ -2,10 +2,9 @@ name: PR Workflow
 on:
   pull_request:
     branches:
-      - dev
       - main
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,9 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: Install deps
-        run: npm install
-      - name: Lint
-        run: npm run eslint
-      - name: Format
-        run: npm run format
+      - name: Prepare
+        run: npm install && npm run eslint && npm run format
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: npm run deploy
