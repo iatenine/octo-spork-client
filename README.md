@@ -38,7 +38,7 @@ MyRepInfo now uses a forking strategy for contributions rather than repository c
 
 # Tests
 
-Test coverage is powered by Jest and RTL, albeit coverage is very limited at the time of this writing
+Test coverage is powered by Jest + RTL and can be found in the src/__tests__/ directory with a similar structure to the encompassing src/ files. All tests use .test.ts(x) extensions, mock out props and should avoid making any network calls when run 
 
 # Questions
 
