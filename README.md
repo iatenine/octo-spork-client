@@ -34,7 +34,7 @@ There are multiple ways to contribute to MyRepInfo:
 - Contribute code to address any open issue by creating a fork, making changes and opening a merge request
 - Spread the word
 
-MyRepInfo now uses a forking strategy for contributions rather than repository collaborators
+MyRepInfo now uses a forking strategy for contributions rather than repository collaborators. All changes merged to the main branch will automatically be deployed to https://staging.myrepinfo.org to be either rolled back or promoted to production manually at a future date
 
 # Tests
 
