@@ -24,15 +24,17 @@ Client-side repo of MyRepInfo project; quickly look up and access info regarding
 
 # Usage
 
-Users do not need to install anything to utilize MyRepInfo. The most up-to-date available version of the site can be viewed at https://iatenine.github.io/octo-spork-client/
+Users do not need to install anything to utilize MyRepInfo. The production app can be found at https://MyRepInfo.org
 
 # Contributing
 
 There are multiple ways to contribute to MyRepInfo:
 
 - Open an issue to report a problem or request new feature
-- Claim any open issue and create a PR addressing it
+- Contribute code to address any open issue by creating a fork, making changes and opening a merge request
 - Spread the word
+
+MyRepInfo now uses a forking strategy for contributions rather than repository collaborators. All changes merged to the main branch will automatically be deployed to https://staging.myrepinfo.org to be either rolled back or promoted to production manually at a future date
 
 # Tests
 
