@@ -27,11 +27,7 @@ function Home(props: codeProps) {
           </Stack>
         </Stack>
       ) : (
-        <Details
-          members={props.members}
-          resetDistrict={resetSearch}
-          district={props.district}
-        />
+        <Details members={props.members} resetDistrict={resetSearch} />
       )}
     </div>
   );
