@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.ecde6cfc.css",
-    "main.js": "/static/js/main.942bfa25.js",
+    "main.js": "/static/js/main.87ed38ef.js",
     "static/js/787.79e345b2.chunk.js": "/static/js/787.79e345b2.chunk.js",
     "static/media/whiteHouse.png": "/static/media/whiteHouse.cfd260fab928b314cc8e.png",
     "index.html": "/index.html",
     "main.ecde6cfc.css.map": "/static/css/main.ecde6cfc.css.map",
-    "main.942bfa25.js.map": "/static/js/main.942bfa25.js.map",
+    "main.87ed38ef.js.map": "/static/js/main.87ed38ef.js.map",
     "787.79e345b2.chunk.js.map": "/static/js/787.79e345b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecde6cfc.css",
-    "static/js/main.942bfa25.js"
+    "static/js/main.87ed38ef.js"
   ]
 }
