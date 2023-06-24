@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { Fragment, useState } from "react";
 import { Card, Col, Row, Container, Tabs, Tab, Button } from "react-bootstrap";
 import {
   PersonCircle,
@@ -12,13 +12,11 @@ import {
 } from "react-bootstrap-icons";
 import { getMemberVotes } from "../utils/utils";
 import { url } from "../data/constants";
+import { useDetails } from "../hooks/useDetails";
 
-function Details(props: {
-  members: any[];
-  resetDistrict: Function;
-  district: number | "At-Large";
-}) {
+function Details(props: { members: any[]; resetDistrict: Function }) {
   const [records, setRecords] = useState<any[]>([]);
+  const { getBorder } = useDetails();
 
   const fetchRecords = async (id: string) => {
     if (records.some(({ member_id }) => id === member_id)) return;
@@ -67,11 +65,16 @@ function Details(props: {
   return (
     <div>
       <Row xs={12} sm={4}>
-        {props.members.map((member) => {
+        {props.members.map((member, index) => {
           return (
-            <Container fluid className="mb-2" key={member._id}>
-              <Card>
-                <Card.Body>
+            <Container
+              fluid
+              className="mb-2"
+              key={member._id}
+              data-testid={`member-card-container-${index}`}
+            >
+              <Card className={getBorder(member.title)}>
+                <Card.Body style={{ backgroundColor: "antiquewhite" }}>
                   <Card.Title>{`${member.first_name} ${member.last_name}`}</Card.Title>
                   <Card.Subtitle>{`${member.title}`}</Card.Subtitle>
                   <Tabs
@@ -80,8 +83,12 @@ function Details(props: {
                       if (k === "vote") fetchRecords(member.id);
                     }}
                   >
-                    <Tab eventKey={"profile"} title={"Profile"}>
-                      <Card.Text>
+                    <Tab
+                      eventKey={"profile"}
+                      title={"Profile"}
+                      style={{ backgroundColor: "white" }}
+                    >
+                      <Card.Text as={"div"}>
                         <PersonCircle size={"98%"} />
                         <ul
                           style={{
@@ -126,18 +133,24 @@ function Details(props: {
                           {records
                             .filter((bill) => bill.member_id === member.id)
                             .map(
-                              ({
-                                position,
-                                question,
-                                date,
-                                description,
-                                result,
-                                bill,
-                                congress,
-                              }) => {
+                              (
+                                {
+                                  position,
+                                  question,
+                                  date,
+                                  description,
+                                  result,
+                                  bill,
+                                  congress,
+                                },
+                                index
+                              ) => {
                                 return (
-                                  <>
-                                    <Row className="bg-info text-center">
+                                  <Fragment key={index}>
+                                    <Row
+                                      className="bg-info text-center"
+                                      key={bill.number}
+                                    >
                                       <Col>
                                         {getLink(bill.number, congress)} -{" "}
                                         {question}
@@ -175,7 +188,7 @@ function Details(props: {
                                       <Col xs={3}>Date </Col>
                                       <Col>{date} </Col>
                                     </Row>
-                                  </>
+                                  </Fragment>
                                 );
                               }
                             )}
@@ -192,7 +205,11 @@ function Details(props: {
         })}
       </Row>
       <Row>
-        <Button variant="secondary" onClick={() => props.resetDistrict()}>
+        <Button
+          variant="secondary"
+          onClick={() => props.resetDistrict()}
+          data-testid={"details-back-btn"}
+        >
           Back
         </Button>
       </Row>
