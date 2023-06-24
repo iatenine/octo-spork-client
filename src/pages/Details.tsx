@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, Col, Row, Container, Tabs, Tab, Button } from "react-bootstrap";
 import {
   PersonCircle,
@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap-icons";
 import { getMemberVotes } from "../utils/utils";
 import { url } from "../data/constants";
+import { useDetails } from "../hooks/useDetails";
 
 function Details(props: {
   members: any[];
@@ -19,6 +20,7 @@ function Details(props: {
   district: number | "At-Large";
 }) {
   const [records, setRecords] = useState<any[]>([]);
+  const { getBorder } = useDetails();
 
   const fetchRecords = async (id: string) => {
     if (records.some(({ member_id }) => id === member_id)) return;
@@ -70,8 +72,8 @@ function Details(props: {
         {props.members.map((member) => {
           return (
             <Container fluid className="mb-2" key={member._id}>
-              <Card>
-                <Card.Body>
+              <Card className={getBorder(member.title)}>
+                <Card.Body style={{ backgroundColor: "antiquewhite" }}>
                   <Card.Title>{`${member.first_name} ${member.last_name}`}</Card.Title>
                   <Card.Subtitle>{`${member.title}`}</Card.Subtitle>
                   <Tabs
@@ -80,7 +82,11 @@ function Details(props: {
                       if (k === "vote") fetchRecords(member.id);
                     }}
                   >
-                    <Tab eventKey={"profile"} title={"Profile"}>
+                    <Tab
+                      eventKey={"profile"}
+                      title={"Profile"}
+                      style={{ backgroundColor: "white" }}
+                    >
                       <Card.Text>
                         <PersonCircle size={"98%"} />
                         <ul
